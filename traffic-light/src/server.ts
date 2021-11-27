@@ -1,11 +1,13 @@
 import express from "express";
+import cors from "cors";
 import router from "./routes/routes";
 
 // express app
 const app = express();
-const port = 3000;
+const port = 8085;
 
 // middleware and static files
+app.use(cors())
 app.use(express.static("public"));
 // app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.json());
